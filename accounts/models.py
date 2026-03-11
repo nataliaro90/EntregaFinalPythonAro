@@ -10,7 +10,7 @@ class Perfil(models.Model):
     def __str__(self):
         return f"Perfil de {self.user.username}"
 
-# NUEVO: Modelo para la mensajería entre usuarios
+# Modelo para la mensajería entre usuarios
 class Mensaje(models.Model):
     emisor = models.ForeignKey(User, on_delete=models.CASCADE, related_name="enviados")
     receptor = models.ForeignKey(User, on_delete=models.CASCADE, related_name="recibidos")

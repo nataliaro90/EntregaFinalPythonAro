@@ -21,10 +21,3 @@ La aplicación permite a los usuarios registrarse, crear perfiles con avatar, pu
 * **CKEditor** (Texto enriquecido)
 
 ## ⚙️ Instalación y Configuración
-
-Sigue estos pasos para correr el proyecto localmente:
-
-1. **Clonar el repositorio:**
-   ```bash
-   git clone <url-de-tu-repo-en-github>
-   cd ENTREGAFINAL-ARO

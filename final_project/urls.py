@@ -5,8 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.admin_url if hasattr(admin.site, 'admin_url') else admin.site.urls),
-    path('', include('blog.urls')),      # Esto conectará con tu blog más adelante
-    path('accounts/', include('accounts.urls')), # Esto con tus usuarios
+    path('', include('blog.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 # Esto permite ver las imágenes en el navegador durante el desarrollo
