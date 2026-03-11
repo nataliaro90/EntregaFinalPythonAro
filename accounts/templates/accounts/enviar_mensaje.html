@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card mx-auto shadow" style="max-width: 500px; padding: 20px;">
+    <h2 style="color: #d11d53;">Enviar Mensaje 💌</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Para:</label>
+        <select name="receptor" class="form-control mb-3">
+            {% for u in usuarios %}<option value="{{ u.id }}">{{ u.username }}</option>{% endfor %}
+        </select>
+        <textarea name="contenido" class="form-control mb-3" placeholder="Escribí tu mensaje..."></textarea>
+        <button type="submit" class="btn btn-custom w-100">Enviar</button>
+    </form>
+</div>
+{% endblock %}

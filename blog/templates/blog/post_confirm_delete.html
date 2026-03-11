@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card mx-auto text-center p-5 shadow" style="max-width: 500px;">
+    <h3 class="text-danger">¿Estás segura? 🧐</h3>
+    <p>Vas a borrar el post: <strong>"{{ object.titulo }}"</strong></p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sí, borrar definitivamente</button>
+        <a href="{% url 'inicio' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

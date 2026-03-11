@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card mx-auto shadow-lg" style="max-width: 600px; padding: 30px; border: 2px solid #ffb6c1;">
+        <div class="text-center">
+            <h2 style="color: #d11d53; margin-bottom: 20px;">Sobre Mí ✨</h2>
+            
+            {% if perfil.avatar %}
+                <img src="{{ perfil.avatar.url }}" class="rounded-circle mb-3" alt="Avatar" style="width: 180px; height: 180px; object-fit: cover; border: 4px solid #ff69b4;">
+            {% else %}
+                <div class="rounded-circle bg-secondary mx-auto mb-3" style="width: 150px; height: 150px;"></div>
+            {% endif %}
+
+            <h3 style="color: #ff1493;">{{ perfil.user.username }}</h3>
+            <hr style="border-top: 2px pink solid;">
+            
+            <p class="lead" style="font-style: italic;">
+                {{ perfil.bio|default:"¡Hola! Soy la creadora de este blog." }}
+            </p>
+            
+            {% if perfil.link %}
+                <a href="{{ perfil.link }}" target="_blank" class="btn btn-custom mt-3">Mi sitio web / GitHub</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

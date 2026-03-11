@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card mx-auto shadow-lg p-4" style="max-width: 600px;">
+    <h2 style="color: #d11d53;">🌸 Editar Mi Perfil</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="first_name" value="{{ user.first_name }}" class="form-control mb-2" placeholder="Nombre">
+        <input type="text" name="last_name" value="{{ user.last_name }}" class="form-control mb-2" placeholder="Apellido">
+        <input type="email" name="email" value="{{ user.email }}" class="form-control mb-2" placeholder="Email">
+        <textarea name="bio" class="form-control mb-2" placeholder="Sobre mí...">{{ perfil.bio }}</textarea>
+        <label>Cambiar Avatar:</label>
+        <input type="file" name="avatar" class="form-control mb-3">
+        <button type="submit" class="btn btn-custom w-100">Actualizar Datos ✨</button>
+    </form>
+</div>
+{% endblock %}
